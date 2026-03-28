@@ -1,0 +1,12 @@
+.git
+.venv
+__pycache__
+*.pyc
+node_modules
+.DS_Store
+backend/.venv
+backend/datashield.db
+backend/tests
+frontend/node_modules
+frontend/dist
+*.env

@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  datashield:
+    build: .
+    container_name: datashield
+    ports:
+      - "8027:8000"
+    volumes:
+      - datashield-data:/app/data
+    restart: unless-stopped
+    environment:
+      - PYTHONPATH=/app/src
+volumes:
+  datashield-data:
