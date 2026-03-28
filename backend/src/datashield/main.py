@@ -51,6 +51,8 @@ async def health():
 
 # --- Static file serving for Docker production builds ---
 _static_dir = Path(__file__).resolve().parent.parent.parent.parent / "static"
+if not _static_dir.is_dir():
+    _static_dir = Path("/app/static")  # Docker fallback
 if _static_dir.is_dir():
     app.mount("/assets", StaticFiles(directory=str(_static_dir / "assets")), name="static")
 
